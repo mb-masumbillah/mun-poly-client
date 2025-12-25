@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "no": 1,
+    "title": "Diploma in Engineering Semester Final Notice",
+    "publishDate": "2024-12-20",
+    "fileName": "semester_final_2024.pdf"
+  },
+  {
+    "id": 2,
+    "no": 2,
+    "title": "Midterm Examination Routine - 2025",
+    "publishDate": "2024-12-22",
+    "fileName": "midterm_routine.pdf"
+  },
+  {
+    "id": 3,
+    "no": 3,
+    "title": "Admission Circular for Academic Session 2024-25",
+    "publishDate": "2024-12-23",
+    "fileName": "admission_circular.pdf"
+  },
+  {
+    "id": 4,
+    "no": 4,
+    "title": "Holiday Notice for National Victory Day",
+    "publishDate": "2024-12-15",
+    "fileName": "holiday_notice.pdf"
+  }
+]

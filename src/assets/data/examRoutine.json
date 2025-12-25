@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "no": 1,
+    "title": "Diploma in engineering 2022",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 2,
+    "no": 2,
+    "title": "Diploma in engineering",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 3,
+    "no": 3,
+    "title": "Diploma in engineering",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 4,
+    "no": 4,
+    "title": "Diploma in engineering",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 5,
+    "no": 5,
+    "title": "Diploma in engineering",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 6,
+    "no": 6,
+    "title": "Diploma in engineering",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 7,
+    "no": 7,
+    "title": "Diploma in engineering",
+    "publishDate": "25-12-12"
+  }
+]

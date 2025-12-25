@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "no": 1,
+    "title": "Room 101 - Seat Plan A",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 2,
+    "no": 2,
+    "title": "Room 102 - Seat Plan B",
+    "publishDate": "25-12-12"
+  },
+  {
+    "id": 3,
+    "no": 3,
+    "title": "Combined Seat Plan - Main Hall",
+    "publishDate": "25-12-12"
+  }
+]
