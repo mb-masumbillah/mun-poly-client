@@ -4,32 +4,249 @@ import FileUploadBox from "../../components/ui/RegisterSystem/FileUploadBox";
 import StudentDetailsForm from "../../components/ui/RegisterSystem/StudentDetailsForm";
 
 const students = [
-    { name: "Cheyenne Donin", roll: "651301", dept: "Computer Science and Technology", sem: "1st", shift: "Day", date: "19 May 25" },
-    { name: "Anika Schleifer", roll: "651302", dept: "Electrical Technology", sem: "2nd", shift: "Morning", date: "19 May 25" },
-    { name: "Tiana Donin", roll: "651303", dept: "Civil Technology", sem: "3rd", shift: "Day", date: "19 May 25" },
-    { name: "Giana Workman", roll: "651304", dept: "IPCT", sem: "4th", shift: "Morning", date: "19 May 25" },
-    { name: "Charlie Septimus", roll: "651305", dept: "Mechanical Technology", sem: "1st", shift: "Day", date: "19 May 25" },
-    { name: "Ashlynn Aminoff", roll: "651306", dept: "Computer Science and Technology", sem: "2nd", shift: "Morning", date: "19 May 25" },
-    { name: "Cristofer Culhane", roll: "651307", dept: "Electrical Technology", sem: "3rd", shift: "Morning", date: "19 May 25" },
-    { name: "Alfredo Calzoni", roll: "651308", dept: "Civil Technology", sem: "4th", shift: "Day", date: "19 May 25" },
-    { name: "Jordyn Curtis", roll: "651309", dept: "IPCT", sem: "2nd", shift: "Morning", date: "19 May 25" },
-    { name: "Corey Bator", roll: "651310", dept: "Mechanical Technology", sem: "3rd", shift: "Day", date: "19 May 25" },
-    { name: "Lydia Newton", roll: "651311", dept: "Computer Science and Technology", sem: "1st", shift: "Day", date: "19 May 25" },
-    { name: "Ethan Marlow", roll: "651312", dept: "Electrical Technology", sem: "2nd", shift: "Morning", date: "19 May 25" },
-    { name: "Sophia Klein", roll: "651313", dept: "Civil Technology", sem: "4th", shift: "Day", date: "19 May 25" },
-    { name: "Maxwell Porter", roll: "651314", dept: "IPCT", sem: "3rd", shift: "Morning", date: "19 May 25" },
-    { name: "Isla Whitman", roll: "651315", dept: "Mechanical Technology", sem: "2nd", shift: "Day", date: "19 May 25" },
-    { name: "Leo Hamilton", roll: "651316", dept: "Computer Science and Technology", sem: "1st", shift: "Morning", date: "19 May 25" },
-    { name: "Olivia York", roll: "651317", dept: "Electrical Technology", sem: "4th", shift: "Day", date: "19 May 25" },
-    { name: "Mason Drake", roll: "651318", dept: "Civil Technology", sem: "3rd", shift: "Morning", date: "19 May 25" },
-    { name: "Ava Lennox", roll: "651319", dept: "IPCT", sem: "2nd", shift: "Day", date: "19 May 25" },
-    { name: "Noah Ramsey", roll: "651320", dept: "Mechanical Technology", sem: "1st", shift: "Morning", date: "19 May 25" },
-    { name: "Emma Caldwell", roll: "651321", dept: "Computer Science and Technology", sem: "4th", shift: "Day", date: "19 May 25" },
-    { name: "Lucas Benton", roll: "651322", dept: "Electrical Technology", sem: "3rd", shift: "Morning", date: "19 May 25" },
-    { name: "Mia Ford", roll: "651323", dept: "Civil Technology", sem: "2nd", shift: "Day", date: "19 May 25" },
-    { name: "Henry Maxwell", roll: "651324", dept: "IPCT", sem: "1st", shift: "Morning", date: "19 May 25" },
-    { name: "Charlotte Bishop", roll: "651325", dept: "Mechanical Technology", sem: "4th", shift: "Day", date: "19 May 25" }
+    {
+        id: 1,
+        name: "Masum Billah",
+        fatherName: "Abdul Billah",
+        motherName: "Fatema Begum",
+        phoneNumber: "01712345678",
+        email: "masum@example.com",
+        department: "CST",
+        shift: "Day",
+        semester: "1st",
+        date: "2025-01-01",
+        addressPresent: "Munshiganj",
+        addressPermanent: "Munshiganj",
+        nationality: "Bangladeshi",
+        dob: "2005-05-15",
+        religion: "Islam",
+        sscRoll: "123456",
+        sscRegNo: "654321",
+        board: "Dhaka",
+        group: "Science",
+        gpa: "5.00",
+        schoolCollege: "Munshiganj High School",
+        passingYear: "2021"
+    },
+    {
+        id: 2,
+        name: "Anika Rahman",
+        fatherName: "Rahim Uddin",
+        motherName: "Selina Rahman",
+        phoneNumber: "01787654321",
+        email: "anika@example.com",
+        department: "ET",
+        shift: "Day",
+        semester: "2nd",
+        date: "2025-02-01",
+        addressPresent: "Dhaka",
+        addressPermanent: "Gazipur",
+        nationality: "Bangladeshi",
+        dob: "2004-10-20",
+        religion: "Islam",
+        sscRoll: "223344",
+        sscRegNo: "443322",
+        board: "Dhaka",
+        group: "Science",
+        gpa: "4.90",
+        schoolCollege: "Dhaka High School",
+        passingYear: "2020"
+    },
+    {
+        id: 3,
+        name: "Rashed Khan",
+        fatherName: "Jamal Khan",
+        motherName: "Rina Khan",
+        phoneNumber: "01812345678",
+        email: "rashed@example.com",
+        department: "MT",
+        shift: "Day",
+        semester: "3rd",
+        date: "2025-03-01",
+        addressPresent: "Chittagong",
+        addressPermanent: "Chittagong",
+        nationality: "Bangladeshi",
+        dob: "2003-08-12",
+        religion: "Islam",
+        sscRoll: "334455",
+        sscRegNo: "554433",
+        board: "Chittagong",
+        group: "Commerce",
+        gpa: "4.80",
+        schoolCollege: "Chittagong College",
+        passingYear: "2019"
+    },
+    {
+        id: 4,
+        name: "Sadia Akter",
+        fatherName: "Abul Hossain",
+        motherName: "Jannatul Akter",
+        phoneNumber: "01987654321",
+        email: "sadia@example.com",
+        department: "CST",
+        shift: "Evening",
+        semester: "1st",
+        date: "2025-01-15",
+        addressPresent: "Narayanganj",
+        addressPermanent: "Munshiganj",
+        nationality: "Bangladeshi",
+        dob: "2005-07-05",
+        religion: "Islam",
+        sscRoll: "445566",
+        sscRegNo: "665544",
+        board: "Dhaka",
+        group: "Science",
+        gpa: "5.00",
+        schoolCollege: "Narayanganj High School",
+        passingYear: "2021"
+    },
+    {
+        id: 5,
+        name: "Tanvir Hossain",
+        fatherName: "Mohammad Hossain",
+        motherName: "Rumana Hossain",
+        phoneNumber: "01711223344",
+        email: "tanvir@example.com",
+        department: "ET",
+        shift: "Day",
+        semester: "2nd",
+        date: "2025-02-12",
+        addressPresent: "Gazipur",
+        addressPermanent: "Gazipur",
+        nationality: "Bangladeshi",
+        dob: "2004-03-25",
+        religion: "Islam",
+        sscRoll: "556677",
+        sscRegNo: "776655",
+        board: "Dhaka",
+        group: "Commerce",
+        gpa: "4.70",
+        schoolCollege: "Gazipur College",
+        passingYear: "2020"
+    },
+    {
+        id: 6,
+        name: "Lima Ferdous",
+        fatherName: "Ferdous Ali",
+        motherName: "Rokia Ferdous",
+        phoneNumber: "01833445566",
+        email: "lima@example.com",
+        department: "CST",
+        shift: "Evening",
+        semester: "3rd",
+        date: "2025-03-15",
+        addressPresent: "Dhaka",
+        addressPermanent: "Dhaka",
+        nationality: "Bangladeshi",
+        dob: "2003-11-11",
+        religion: "Islam",
+        sscRoll: "667788",
+        sscRegNo: "887766",
+        board: "Dhaka",
+        group: "Science",
+        gpa: "4.90",
+        schoolCollege: "Dhaka College",
+        passingYear: "2019"
+    },
+    {
+        id: 7,
+        name: "Jahid Hasan",
+        fatherName: "Hasan Ali",
+        motherName: "Selina Hasan",
+        phoneNumber: "01922334455",
+        email: "jahid@example.com",
+        department: "MT",
+        shift: "Day",
+        semester: "4th",
+        date: "2025-04-10",
+        addressPresent: "Chittagong",
+        addressPermanent: "Comilla",
+        nationality: "Bangladeshi",
+        dob: "2002-06-02",
+        religion: "Islam",
+        sscRoll: "778899",
+        sscRegNo: "998877",
+        board: "Chittagong",
+        group: "Commerce",
+        gpa: "4.60",
+        schoolCollege: "Chittagong College",
+        passingYear: "2018"
+    },
+    {
+        id: 8,
+        name: "Nabila Akter",
+        fatherName: "Abdur Rahman",
+        motherName: "Shamima Akter",
+        phoneNumber: "01799887766",
+        email: "nabila@example.com",
+        department: "CST",
+        shift: "Evening",
+        semester: "1st",
+        date: "2025-01-20",
+        addressPresent: "Dhaka",
+        addressPermanent: "Gazipur",
+        nationality: "Bangladeshi",
+        dob: "2005-02-14",
+        religion: "Islam",
+        sscRoll: "889900",
+        sscRegNo: "009988",
+        board: "Dhaka",
+        group: "Science",
+        gpa: "5.00",
+        schoolCollege: "Dhaka High School",
+        passingYear: "2021"
+    },
+    {
+        id: 9,
+        name: "Riyad Islam",
+        fatherName: "Abul Islam",
+        motherName: "Rokeya Islam",
+        phoneNumber: "01844556677",
+        email: "riyad@example.com",
+        department: "ET",
+        shift: "Day",
+        semester: "2nd",
+        date: "2025-02-25",
+        addressPresent: "Munshiganj",
+        addressPermanent: "Munshiganj",
+        nationality: "Bangladeshi",
+        dob: "2004-12-12",
+        religion: "Islam",
+        sscRoll: "990011",
+        sscRegNo: "110099",
+        board: "Dhaka",
+        group: "Commerce",
+        gpa: "4.80",
+        schoolCollege: "Munshiganj College",
+        passingYear: "2020"
+    },
+    {
+        id: 10,
+        name: "Samiha Chowdhury",
+        fatherName: "Chowdhury Alam",
+        motherName: "Fatema Chowdhury",
+        phoneNumber: "01955667788",
+        email: "samiha@example.com",
+        department: "MT",
+        shift: "Evening",
+        semester: "3rd",
+        date: "2025-03-30",
+        addressPresent: "Dhaka",
+        addressPermanent: "Dhaka",
+        nationality: "Bangladeshi",
+        dob: "2003-01-05",
+        religion: "Islam",
+        sscRoll: "101112",
+        sscRegNo: "121110",
+        board: "Dhaka",
+        group: "Science",
+        gpa: "4.90",
+        schoolCollege: "Dhaka College",
+        passingYear: "2019"
+    },
+
 ];
+
 
 const RegisterStudent = () => {
     const [file, setFile] = useState(null);
@@ -40,23 +257,27 @@ const RegisterStudent = () => {
     const [shiftFilter, setShiftFilter] = useState("all");
     const [selectedStudent, setSelectedStudent] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+   const [studentToDelete, setStudentToDelete] = useState(null); 
     const perPage = 15;
 
-    const depts = ["all", ...new Set(students.map(s => s.dept))];
-    const sems = ["all", ...new Set(students.map(s => s.sem))];
+    // Filter options
+    const depts = ["all", ...new Set(students.map(s => s.department))];
+    const sems = ["all", ...new Set(students.map(s => s.semester))];
     const shifts = ["all", ...new Set(students.map(s => s.shift))];
 
+    // Filtered & searched data
     const filteredStudents = students.filter((s) => {
         const query = search.toLowerCase();
         const matchSearch =
             s.name.toLowerCase().includes(query) ||
-            s.roll.toString().toLowerCase().includes(query) ||
-            s.dept.toLowerCase().includes(query) ||
-            s.sem.toLowerCase().includes(query) ||
+            s.roll?.toString().includes(query) ||
+            s.department.toLowerCase().includes(query) ||
+            s.semester.toLowerCase().includes(query) ||
             s.shift.toLowerCase().includes(query);
 
-        const matchDept = deptFilter === "all" || s.dept === deptFilter;
-        const matchSem = semFilter === "all" || s.sem === semFilter;
+        const matchDept = deptFilter === "all" || s.department === deptFilter;
+        const matchSem = semFilter === "all" || s.semester === semFilter;
         const matchShift = shiftFilter === "all" || s.shift === shiftFilter;
 
         return matchSearch && matchDept && matchSem && matchShift;
@@ -72,6 +293,19 @@ const RegisterStudent = () => {
         console.log("File ready to send backend", f.name);
     };
 
+     // Delete student function
+    const handleDeleteStudent = () => {
+        
+        const index = students.findIndex(s => s.id === studentToDelete.id);
+        if (index !== -1) {
+            students.splice(index, 1);
+        }
+        setIsDeleteModalOpen(false);
+        setStudentToDelete(null);
+        setPage(1); 
+    };
+
+
     return (
         <div className="space-y-6">
             <h1 className="text-xl font-semibold">Students Information</h1>
@@ -86,7 +320,7 @@ const RegisterStudent = () => {
             <div className="space-y-4">
                 <h1 className="text-xl font-semibold">Students List</h1>
 
-                {/* Filter + Search Sticky */}
+                {/* Filter + Search */}
                 <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center sticky top-0 bg-white z-10 gap-4 p-4 border-b border-slate-300">
                     <div className="flex flex-wrap gap-2 md:gap-4 items-center">
                         <select
@@ -140,12 +374,12 @@ const RegisterStudent = () => {
                         </thead>
 
                         <tbody>
-                            {paginatedData.map((student, i) => (
-                                <tr key={i} className="border-b border-slate-300 hover:bg-slate-50">
+                            {paginatedData.map((student) => (
+                                <tr key={student.id} className="border-b border-slate-300 hover:bg-slate-50">
                                     <td className="px-4 py-3 border-r border-slate-300">{student.name}</td>
-                                    <td className="px-4 py-3 border-r border-slate-300">{student.roll}</td>
-                                    <td className="px-4 py-3 border-r border-slate-300">{student.dept}</td>
-                                    <td className="px-4 py-3 border-r border-slate-300">{student.sem}</td>
+                                    <td className="px-4 py-3 border-r border-slate-300">{student.id}</td>
+                                    <td className="px-4 py-3 border-r border-slate-300">{student.department}</td>
+                                    <td className="px-4 py-3 border-r border-slate-300">{student.semester}</td>
                                     <td className="px-4 py-3 border-r border-slate-300">{student.shift}</td>
                                     <td className="px-4 py-3 border-r border-slate-300">{student.date}</td>
                                     <td className="px-4 py-3">
@@ -156,9 +390,12 @@ const RegisterStudent = () => {
                                             >
                                                 <FileEdit size={16} />
                                             </button>
-                                            <button className="h-8 w-8 flex items-center justify-center rounded-md border border-red-400 text-red-600 hover:bg-red-50">
-                                                <Trash2 size={16} />
-                                            </button>
+                                             <button
+                                            className="h-8 w-8 flex items-center justify-center rounded-md border border-red-400 text-red-600 hover:bg-red-50"
+                                            onClick={() => { setStudentToDelete(student); setIsDeleteModalOpen(true); }}
+                                        >
+                                            <Trash2 size={16} />
+                                        </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -194,7 +431,7 @@ const RegisterStudent = () => {
             {/* Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50 p-4">
-                    <div className="bg-white rounded-lg shadow-lg max-h-[44rem] overflow-y-auto p-6 relative w-full max-w-lg">
+                    <div className="bg-white rounded-lg shadow-lg sm:max-h-[44rem] max-h-[34rem] overflow-y-auto p-6 relative w-full max-w-3xl">
                         <button
                             className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
                             onClick={() => setIsModalOpen(false)}
@@ -205,9 +442,40 @@ const RegisterStudent = () => {
                     </div>
                 </div>
             )}
+            {/* Delete Confirmation Modal */}
+            {isDeleteModalOpen && studentToDelete && (
+                <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50 p-4">
+                    <div className="bg-white rounded-lg shadow-lg p-6 relative w-full max-w-sm text-center">
+                        <h2 className="text-lg font-semibold mb-4">Are you sure you want to delete?</h2>
+                        <p className="mb-6">{studentToDelete.name} will be permanently deleted.</p>
+                        <div className="flex justify-center gap-4">
+                            <button
+                                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                                onClick={handleDeleteStudent}
+                            >
+                                Delete
+                            </button>
+                            <button
+                                className="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                                onClick={() => setIsDeleteModalOpen(false)}
+                            >
+                                Cancel
+                            </button>
+                        </div>
+                        <button
+                            className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                            onClick={() => setIsDeleteModalOpen(false)}
+                        >
+                            <X />
+                        </button>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 };
 
 export default RegisterStudent;
+
 

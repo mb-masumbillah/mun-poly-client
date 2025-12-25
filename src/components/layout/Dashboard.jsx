@@ -1,4 +1,4 @@
-import { ChevronRight, LogOut, Menu, X } from "lucide-react";
+import { ChevronRight, Home, LogOut, Menu, X } from "lucide-react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useState } from "react";
 import SuperAdminNavItem from "../ui/DashboardNavItem/SuperAdminNavItem";
@@ -96,7 +96,11 @@ const Dashboard = () => {
                     )}
                 </div>
 
-                <NavLink className="flex items-center gap-3 py-4 border-t border-gray-300">
+                <NavLink className="flex items-center gap-3 py-4 border-t px-3 border-gray-300">
+                    <Home className="" />
+                    <span>Go To Home</span>
+                </NavLink>
+                <NavLink className="flex items-center gap-3 py-4 px-3 border-gray-300">
                     <LogOut className="text-red-500" />
                     <span>Log Out</span>
                 </NavLink>
