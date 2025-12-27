@@ -443,6 +443,7 @@ const RegisterStudent = () => {
                 </div>
             )}
             {/* Delete Confirmation Modal */}
+            
             {isDeleteModalOpen && studentToDelete && (
                 <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50 p-4">
                     <div className="bg-white rounded-lg shadow-lg p-6 relative w-full max-w-sm text-center">

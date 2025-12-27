@@ -1,14 +1,26 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { LogOut, Menu, X } from 'lucide-react';
 import logo from '/logo.svg';
+import useAuth from '../../../hooks/useAuth';
+import AvatarMenu from './AvatarMenu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
+  const { logout, user } = useAuth()
+
+
 
   const navLinkClass = ({ isActive }) =>
     `text-xl relative before:absolute before:content-[""] before:bg-primary before:h-0.75 before:left-0 before:duration-400 hover:scale-105 transition-all duration-400 before:-bottom-[4px] hover:before:w-full
     ${isActive ? 'text-primary before:w-full' : 'text-gray-800 before:w-0'}`;
+
+  const handleLogout = () => {
+    logout()
+    navigate("/", { replace: true });
+  };
+
 
   return (
     <section className="relative">
@@ -29,10 +41,19 @@ const Navbar = () => {
             <li><NavLink to="/about" className={navLinkClass}>About MUPI</NavLink></li>
           </ul>
 
-          <div className="flex gap-3">
-            <NavLink to="/login" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black">Sign In</NavLink>
-            <NavLink to="/register" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black">Registration</NavLink>
-          </div>
+          {user ? (
+            <AvatarMenu handleLogout={handleLogout} />
+          ) : (
+            <div className="flex gap-3">
+              <NavLink to="/login" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black">Sign In</NavLink>
+              <NavLink to="/register" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black">Registration</NavLink>
+            </div>
+          )}
+
+
+
+
+
         </div>
 
         {/* Mobile Menu Button */}
@@ -56,10 +77,16 @@ const Navbar = () => {
           <li><NavLink onClick={() => setIsOpen(false)} to="/contact" className={navLinkClass}>Contact</NavLink></li>
           <li><NavLink onClick={() => setIsOpen(false)} to="/about" className={navLinkClass}>About MUPI</NavLink></li>
         </ul>
-        <div className="flex flex-col gap-3 p-4">
+
+        {user ? (
+          <AvatarMenu handleLogout={handleLogout} />
+        ) : <div className="flex flex-col gap-3 p-4">
           <NavLink onClick={() => setIsOpen(false)} to="/login" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black text-center">Sign In</NavLink>
           <NavLink onClick={() => setIsOpen(false)} to="/register" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black text-center">Registration</NavLink>
         </div>
+        }
+
+
       </div>
     </section>
   );

@@ -32,7 +32,9 @@ const RegisterPayment = () => {
     const [file, setFile] = useState(null);
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    // const [paymentToDelete, setPaymentToDelete] = useState(null);
     const perPage = 10;
 
     const filteredPayment = paymentData.filter((p) =>
@@ -48,6 +50,18 @@ const RegisterPayment = () => {
         formData.append("file", f);
         console.log("File ready to send backend", f.name);
     };
+
+    const handleDeleteStudent = () => {
+
+        // const index = students.findIndex(s => s.id === studentToDelete.id);
+        // if (index !== -1) {
+        //     students.splice(index, 1);
+        // }
+        setIsDeleteModalOpen(false);
+        // setStudentToDelete(null);
+        setPage(1);
+    };
+
 
     return (
         <div className="space-y-10">
@@ -101,7 +115,10 @@ const RegisterPayment = () => {
                                         <td className="px-4 py-3 border-r border-gray-200">{payment.date}</td>
                                         <td className="px-4 py-3">
                                             <div className="flex justify-center">
-                                                <button className="h-8 w-8 flex items-center justify-center rounded-md border border-red-400 text-red-600 hover:bg-red-50">
+                                                <button
+                                                    className="h-8 w-8 flex items-center justify-center rounded-md border border-red-400 text-red-600 hover:bg-red-50"
+                                                    onClick={() => {  setIsDeleteModalOpen(true); }}
+                                                >
                                                     <Trash2 size={16} />
                                                 </button>
                                             </div>
@@ -148,19 +165,35 @@ const RegisterPayment = () => {
             </div>
 
             {/* Modal */}
-            {isModalOpen && (
+            {isDeleteModalOpen && (
                 <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50 p-4">
-                    <div className="bg-white rounded-lg shadow-lg max-h-screen overflow-y-auto p-6 relative w-full max-w-md">
+                    <div className="bg-white rounded-lg shadow-lg p-6 relative w-full max-w-sm text-center">
+                        <h2 className="text-lg font-semibold mb-4">Are you sure you want to delete?</h2>
+                        <p className="mb-6">Payment will be permanently deleted.</p>
+                        <div className="flex justify-center gap-4">
+                            <button
+                                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                                onClick={handleDeleteStudent}
+                            >
+                                Delete
+                            </button>
+                            <button
+                                className="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                                onClick={() => setIsDeleteModalOpen(false)}
+                            >
+                                Cancel
+                            </button>
+                        </div>
                         <button
-                            className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-                            onClick={() => setIsModalOpen(false)}
+                            className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                            onClick={() => setIsDeleteModalOpen(false)}
                         >
                             <X />
                         </button>
-                        {/* Modal content */}
                     </div>
                 </div>
             )}
+
         </div>
     );
 };

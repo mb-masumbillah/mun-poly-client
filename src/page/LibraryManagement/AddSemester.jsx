@@ -1,33 +1,47 @@
-import { useMemo, useState } from "react";
-
-
-
-const SEMESTER_DATA = [
-  { id: 1, name: "First Semester", shortName: "1st" },
-  { id: 2, name: "Second Semester", shortName: "2nd" },
-  { id: 3, name: "Third Semester", shortName: "3rd" },
-  { id: 4, name: "Fourth Semester", shortName: "4th" },
-  { id: 5, name: "Fifth Semester", shortName: "5th" },
-  { id: 6, name: "Sixth Semester", shortName: "6th" },
-  { id: 7, name: "Seventh Semester", shortName: "7th" },
-  { id: 8, name: "Eighth Semester", shortName: "8th" },
-];
-
+import { useState, useMemo } from "react";
+import { Search, Plus, FileEdit } from "lucide-react";
+import { useLoaderData } from "react-router-dom";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export function AddSemester() {
+  const addSemester = useLoaderData();
   const [query, setQuery] = useState("");
 
-  // Enhanced filter to search both name and shortName
+  // Modal add and edit semester
+  const [isAddSemesterModalAdded, setIsAddSemesterModalAdded] = useState(false);
+  const [isAddSemesterModalEdit, setIsAddSemesterModalEdit] = useState(false);
+
+
+  // search name and shortName
   const filteredData = useMemo(() => {
-    return SEMESTER_DATA.filter((s) =>
-      s.name.toLowerCase().includes(query.toLowerCase()) ||
-      s.shortName.toLowerCase().includes(query.toLowerCase())
+    return addSemester.filter(
+      (s) =>
+        s.name.toLowerCase().includes(query.toLowerCase()) ||
+        s.shortName.toLowerCase().includes(query.toLowerCase())
     );
-  }, [query]);
+  }, [query, addSemester]);
+
 
   return (
     <div className="p-8 space-y-6 bg-white min-h-screen">
-      {/* Header Actions */}
+      {/* Header Section */}
+      <h2 className="text-xl font-semibold pb-5">Add Semester</h2>
       <div className="flex items-center justify-between gap-4">
         <div className="relative w-full max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
@@ -38,7 +52,9 @@ export function AddSemester() {
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <Button className="bg-[#003f5c] hover:bg-[#002d42] text-white gap-2 px-6">
+        <Button
+          onClick={() => setIsAddSemesterModalAdded(true)}
+          className="bg-[#003f5c] hover:bg-[#002d42] text-white gap-2 px-6">
           Add Semester <Plus className="h-4 w-4" />
         </Button>
       </div>
@@ -46,7 +62,8 @@ export function AddSemester() {
       {/* Table Section */}
       <div className="border rounded-lg overflow-hidden shadow-sm">
         <Table>
-          <TableHeader className="bg-[#e9eff3]"> {/* Design-accurate header color */}
+          <TableHeader className="bg-[#e9eff3]">
+            {" "}
             <TableRow className="hover:bg-transparent">
               <TableHead className="font-bold text-slate-700 py-4 px-6">
                 Name
@@ -62,7 +79,10 @@ export function AddSemester() {
           <TableBody>
             {filteredData.length > 0 ? (
               filteredData.map((item) => (
-                <TableRow key={item.id} className="hover:bg-slate-50 transition-colors border-b">
+                <TableRow
+                  key={item.id}
+                  className="hover:bg-slate-50 transition-colors border-b"
+                >
                   <TableCell className="text-slate-600 font-medium py-4 px-6">
                     {item.name}
                   </TableCell>
@@ -70,15 +90,20 @@ export function AddSemester() {
                     {item.shortName}
                   </TableCell>
                   <TableCell className="text-right pr-8">
-                    <button className="text-slate-400 hover:text-blue-600 transition-colors p-2">
+                    <Button
+                      onClick={() => setIsAddSemesterModalEdit(true)}
+                      variant="ghost" className="text-blue-600 transition-colors p-2">
                       <FileEdit className="h-5 w-5" />
-                    </button>
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={3} className="text-center py-10 text-slate-500">
+                <TableCell
+                  colSpan={3}
+                  className="text-center py-10 text-slate-500"
+                >
                   No semesters found for "{query}"
                 </TableCell>
               </TableRow>
@@ -86,6 +111,88 @@ export function AddSemester() {
           </TableBody>
         </Table>
       </div>
+
+      {/* Modal Add semester */}
+      <Dialog open={isAddSemesterModalAdded} onOpenChange={setIsAddSemesterModalAdded}>
+        <DialogContent className="p-10 min-w-5xl w-full">
+          <DialogHeader className="flex flex-row items-center justify-between">
+            <DialogTitle className="text-2xl font-bold text-[#003d4d]">
+              Add Semester
+            </DialogTitle>
+          </DialogHeader>
+
+          <form className="space-y-6 mt-4">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+              <div className="space-y-2">
+                <Label className="font-bold">Name</Label>
+                <Input type={Text} placeholder="Enter Name" />
+              </div>
+              <div className="space-y-2">
+                <Label className="font-bold">Short Name</Label>
+                <Input type={Text} placeholder="Enter Short Name" />
+              </div>
+            </div>
+
+            <div className="flex justify-center gap-4 pt-6">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setIsAddSemesterModalAdded(false)}
+                className="w-32 border-gray-300 text-orange-500 font-bold hover:text-orange-600 hover:bg-orange-50"
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                className="w-32 bg-[#003d4d] hover:bg-[#002a35] font-bold text-white"
+              >
+                Add Department
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
+
+      {/* Modal edit semester */}
+      <Dialog open={isAddSemesterModalEdit} onOpenChange={setIsAddSemesterModalEdit}>
+        <DialogContent className="p-10 min-w-5xl w-full">
+          <DialogHeader className="flex flex-row items-center justify-between">
+            <DialogTitle className="text-2xl font-bold text-[#003d4d]">
+              Edit Semester
+            </DialogTitle>
+          </DialogHeader>
+
+          <form className="space-y-6 mt-4">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+              <div className="space-y-2">
+                <Label className="font-bold">Name</Label>
+                <Input type={Text} placeholder="Enter Department Name" />
+              </div>
+              <div className="space-y-2">
+                <Label className="font-bold">Short Name</Label>
+                <Input type={Text} placeholder="Enter Department Short Name" />
+              </div>
+            </div>
+
+            <div className="flex justify-center gap-4 pt-6">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setIsAddSemesterModalEdit(false)}
+                className="w-32 border-gray-300 text-orange-500 font-bold hover:text-orange-600 hover:bg-orange-50"
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                className="w-32 bg-[#003d4d] hover:bg-[#002a35] font-bold text-white"
+              >
+                Update
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

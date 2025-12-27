@@ -1,7 +1,7 @@
 import Instructor from '../../assets/Instructors.png';
 import CI1 from '../../assets/CI1.png';
 import CI2 from '../../assets/CI2.png';
-import Button from '../../components/ui/Buttons/Button';
+import Buttons from '../../components/ui/Buttons/Buttons';
 
 const Instructors = () => {
   const teachers = [
@@ -50,7 +50,7 @@ const Instructors = () => {
             <div className="flex flex-col justify-between">
               <h3 className="text-2xl sm:text-3xl font-semibold">{teacher.name}</h3>
               <div className="my-4">
-                <Button text={teacher.role} />
+                <Buttons text={teacher.role} />
               </div>
               <div className="text-gray-700 text-sm sm:text-base flex flex-col gap-1">
                 <span>Call: {teacher.phone}</span>
@@ -72,7 +72,7 @@ const Instructors = () => {
             <p className="text-gray-900 text-lg">
               21-12-25 | {inst}
             </p>
-            <Button text="Show Details" />
+            <Buttons text="Show Details" />
           </li>
         ))}
       </ul>

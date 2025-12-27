@@ -1,5 +1,5 @@
 import { ChevronRight, Home, LogOut, Menu, X } from "lucide-react";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SuperAdminNavItem from "../ui/DashboardNavItem/SuperAdminNavItem";
 import InstituteAdminNavItem from "../ui/DashboardNavItem/InstituteAdminNavItem";
@@ -8,13 +8,16 @@ import LibraryAdminNavItem from "../ui/DashboardNavItem/LibraryAdminNavItem";
 import ExamControlAdminNavItem from "../ui/DashboardNavItem/ExamControlAdminNavItem";
 import StudentNavItem from "../ui/DashboardNavItem/StudentNavItem";
 import TeacherNavItem from "../ui/DashboardNavItem/TeacherNavItem";
+import useAuth from "../../hooks/useAuth";
+
 
 const Dashboard = () => {
     const location = useLocation();
     const [openMenu, setOpenMenu] = useState(null);
     const [designation] = useState(localStorage.getItem("userRole"));
-
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const navigate = useNavigate()
+    const { logout } = useAuth()
 
     let headerTitle = "Profile";
 
@@ -28,11 +31,10 @@ const Dashboard = () => {
         headerTitle = "Institute Management System";
     }
 
-    const navClass = (isActive) =>
-        `px-3 py-2 rounded flex justify-between items-center ${isActive
-            ? "text-white bg-[#00455D]"
-            : "text-[#00202E] hover:bg-[#e0f0f7]"
-        }`;
+    const handleLogout = () => {
+        logout()
+        navigate("/", { replace: true });
+    };
 
     return (
         <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -63,9 +65,7 @@ const Dashboard = () => {
 
                 <div className="p-4 pt-8 pl-0 space-y-3 w-full flex-1 overflow-y-auto">
 
-                    <NavLink to="/dashboard" end className={({ isActive }) => navClass(isActive)}>
-                        <span>Dashboard</span> <ChevronRight />
-                    </NavLink>
+
 
                     {designation === "admin" && (
                         <SuperAdminNavItem openMenu={openMenu} setOpenMenu={setOpenMenu} />
@@ -88,22 +88,22 @@ const Dashboard = () => {
                     )}
 
                     {designation === "student" && (
-                        <StudentNavItem openMenu={openMenu} setOpenMenu={setOpenMenu} />
+                        <StudentNavItem />
                     )}
 
                     {designation === "teacher" && (
-                        <TeacherNavItem openMenu={openMenu} setOpenMenu={setOpenMenu} />
+                        <TeacherNavItem />
                     )}
                 </div>
 
-                <NavLink className="flex items-center gap-3 py-4 border-t px-3 border-gray-300">
+                <NavLink to="/" className="flex cursor-pointer items-center gap-3 py-4 border-t px-3 border-gray-300">
                     <Home className="" />
                     <span>Go To Home</span>
                 </NavLink>
-                <NavLink className="flex items-center gap-3 py-4 px-3 border-gray-300">
+                <button onClick={handleLogout} className="flex cursor-pointer items-center gap-3 py-4 px-3 border-gray-300">
                     <LogOut className="text-red-500" />
                     <span>Log Out</span>
-                </NavLink>
+                </button>
 
 
             </aside>

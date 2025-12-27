@@ -4,7 +4,7 @@ import curriculum from '../../../assets/curriculum.png';
 import growth from '../../../assets/growth.png';
 import upCurve from '../../../assets/upCurve.png';
 import downCurve from '../../../assets/downCurve.png';
-import Button from '../Buttons/Button';
+import Buttons from '../Buttons/Buttons';
 
 const Study = () => {
   return (
@@ -58,7 +58,7 @@ const Study = () => {
         {/* studies card end */}
 
         <div className="flex justify-center mt-8 sm:ml-12">
-          <Button text="Admission Now" />
+          <Buttons text="Admission Now" />
         </div>
       </div>
     </section>

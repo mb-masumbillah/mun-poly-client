@@ -39,6 +39,7 @@ const OurDepartment = () => {
           <h3 className="py-6 font-semibold text-center">Electrical Technology</h3>
           <div className="w-full flex justify-center">
             <LargeBtn text="View Details" className="w-full" />
+            
           </div>
         </div>
 

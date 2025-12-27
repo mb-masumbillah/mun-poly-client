@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import useAuth from '../../hooks/useAuth'
 
 const Login = () => {
+
+    const {login} = useAuth()
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -15,11 +18,8 @@ const Login = () => {
         setError('')
 
         if (formData.email && formData.password) {
-
-            localStorage.setItem('isAuthenticated', 'true')
-            localStorage.setItem('userRole', formData?.role)
-
-            navigate('/dashboard')
+            login(formData?.role)
+            navigate('/dashboard', { replace: true })
 
         } else {
             setError('Please fill in all fields')

@@ -10,13 +10,23 @@ const RegisterAdminNavItem = ({ openMenu, setOpenMenu }) => {
     const linkClass = ({ isActive }) =>
         `block w-full px-2 py-2 rounded text-sm border mb-2 border-[#006A8E] ${isActive ? "bg-[#006A8E] text-white" : "hover:bg-[#006A8E]/30"
         }`;
+    const navClass = (isActive) =>
+        `px-3 py-2 rounded flex justify-between items-center ${isActive
+            ? "text-white bg-[#00455D]"
+            : "text-[#00202E] hover:bg-[#e0f0f7]"
+        }`;
+
     return (
+        <>
+          <NavLink to="/dashboard" end className={({ isActive }) => navClass(isActive)}>
+                        <span>Dashboard</span> <ChevronRight />
+                    </NavLink>
         <div>
             <button
                 onClick={() => toggleMenu("register")}
                 className={`w-full px-3 py-2 flex justify-between items-center rounded-tl rounded-tr mt-2 ${openMenu === "register"
-                    ? "bg-[#00455D] text-white"
-                    : "hover:bg-[#e0f0f7]"
+                        ? "bg-[#00455D] text-white"
+                        : "hover:bg-[#e0f0f7]"
                     }`}
             >
                 <span>Register Management</span>
@@ -34,6 +44,8 @@ const RegisterAdminNavItem = ({ openMenu, setOpenMenu }) => {
                 </div>
             )}
         </div>
+        </>
+
     );
 };
 

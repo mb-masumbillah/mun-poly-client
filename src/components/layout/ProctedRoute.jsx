@@ -1,9 +1,19 @@
+import { Navigate, useLocation } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
-const ProctedRoute = () => {
+const ProctedRoute = ({ children }) => {
+    const { user } = useAuth();
+    const location = useLocation();
+
+    
+    if (user) {
+        return children;
+    }
+
     return (
-        <div>
-            
-        </div>
+        <Navigate state={location.pathname} to="/">
+            {children}
+        </Navigate>
     );
 };
 
