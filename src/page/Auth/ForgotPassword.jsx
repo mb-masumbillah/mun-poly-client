@@ -9,7 +9,7 @@ const ForgotPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     // In real app, this would be an API call
-    console.log('Password reset requested for:', email)
+    // console.log('Password reset requested for:', email)
     setShowConfirmation(true)
   }
 

@@ -24,7 +24,7 @@ const SetNewPassword = () => {
     }
 
     // In real app, this would be an API call
-    console.log('Password reset completed')
+    // console.log('Password reset completed')
     navigate('/login')
   }
 

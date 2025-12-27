@@ -95,7 +95,7 @@ const InstructorInfo = () => {
         setFile(f);
         const formData = new FormData();
         formData.append("file", f);
-        console.log("File ready to send backend", f.name);
+        // console.log("File ready to send backend", f.name);
     };
 
     // Delete instructor function

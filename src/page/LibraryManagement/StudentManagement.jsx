@@ -316,8 +316,8 @@ export default function StudentManagement() {
               <Button
                 className="bg-red-500"
                 onClick={() => {
-                  console.log("Book Deleted");
-                  setOpenDelete(false);
+                  // console.log("Book Deleted");
+                  // setOpenDelete(false);
                 }}
               >
                 Delete

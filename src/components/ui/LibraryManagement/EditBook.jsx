@@ -36,7 +36,6 @@ const EditBook = () => {
     currentPage * itemsPerPage
   );
 
-  console.log(totalPages, setCurrentPage)
 
   return (
     <div className="p-8 bg-gray-50 min-h-screen">
@@ -191,7 +190,7 @@ const EditBook = () => {
             <Button
               className="bg-red-500"
               onClick={() => {
-                console.log("Book Deleted");
+                // console.log("Book Deleted");
                 // setOpenDelete(false);
               }}
             >

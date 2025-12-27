@@ -7,7 +7,7 @@ import TeacherProfile from "./TeacherProfile";
 const Profile = () => {
     const { role } = useAuth()
 
-    console.log(role)
+    // console.log(role)
 
     return (
         <div>

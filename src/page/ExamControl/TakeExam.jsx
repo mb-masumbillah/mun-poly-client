@@ -54,7 +54,7 @@ const TakeExam = () => {
 
   const handleSubmit = useCallback(() => {
     // In real app, this would submit to backend
-    console.log('Exam submitted:', answers)
+    // console.log('Exam submitted:', answers)
     navigate('/results')
   }, [answers, navigate])
 
