@@ -1,23 +1,23 @@
 import Instructor from '../../assets/Instructors.png';
-import CI1 from '../../assets/CI1.png';
-import CI2 from '../../assets/CI2.png';
+import CI1 from '../../assets/arifsir.jpg';
+import CI2 from '/abdullah.png';
 import Buttons from '../../components/ui/Buttons/Buttons';
 
 const Instructors = () => {
   const teachers = [
     {
       img: CI1,
-      name: 'Kaylynn Ekstrom Bothman',
-      role: 'The Principal',
+      name: 'Arif Ahmed',
+      role: 'Chief Instructor',
       phone: '+880 123456789',
-      email: 'thechairmanmupi@gmai.com',
+      email: 'arifahmed@gmai.com',
     },
     {
       img: CI2,
-      name: 'Maren Rosser',
-      role: 'The CI',
+      name: 'Abdullah Al Mamun',
+      role: 'Chief Instructor',
       phone: '+880 123456789',
-      email: 'thechairmanmupi@gmai.com',
+      email: 'abdullah@gmai.com',
     },
   ];
 
