@@ -67,8 +67,6 @@ const Dashboard = () => {
 
                 <div className="p-4 pt-8 pl-0 space-y-3 w-full flex-1 overflow-y-auto">
 
-
-
                     {designation === "admin" && (
                         <SuperAdminNavItem openMenu={openMenu} setOpenMenu={setOpenMenu} />
                     )}
