@@ -32,7 +32,6 @@ const handleFile = async (file) => {
     });
     return obj;
   });
-console.log({formatted})
   setStudents(formatted);
 };
 

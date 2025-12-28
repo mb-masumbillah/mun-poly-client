@@ -13,7 +13,7 @@ const AvatarMenu = ({ handleLogout }) => {
         className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center cursor-pointer border border-gray-300"
       >
         <img
-          src="https://i.pravatar.cc/150?img=12"
+          src="avater.jpg"
           alt="avatar"
           className="w-full h-full rounded-full"
         />
