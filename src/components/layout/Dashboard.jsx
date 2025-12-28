@@ -63,7 +63,7 @@ const Dashboard = () => {
                     <Link to="/">
                         <img src="/logo.png" alt="Logo" />
                     </Link>
-                </div>  
+                </div>   
 
                 <div className="p-4 pt-8 pl-0 space-y-3 w-full flex-1 overflow-y-auto">
 
