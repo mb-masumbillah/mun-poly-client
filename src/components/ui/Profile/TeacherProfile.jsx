@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AtikurImg from "../../../assets/atikur.jpg";
+import ArifImg from "../../../assets/arifsir.jpg";
 import { LucideEyeOff } from "lucide-react";
 import SectionAdminEditInfo from "./SuperAdmin/SectionAdmin/SectionAdminEditInfo";
 import ChangePassword from "./SuperAdmin/SectionAdmin/ChangePassword";
@@ -19,13 +19,13 @@ const TeacherProfile = () => {
             <div className="flex items-center justify-between my-10 ">
                 <div className="flex items-center gap-5">
                     <img
-                        src={AtikurImg}
+                        src={ArifImg}
                         className="w-24 h-24 rounded-2xl object-cover"
                         alt="Profile"
                     />
                     <div>
-                        <h3 className="text-2xl font-bold text-[#002B44]">Atikur rahman</h3>
-                        <p className="text-gray-400">atikur@gmail.com</p>
+                        <h3 className="text-2xl font-bold text-[#002B44]">Arif Ahamed</h3>
+                        <p className="text-gray-400">arif@gmail.com</p>
                     </div>
                 </div>
 
@@ -46,7 +46,7 @@ const TeacherProfile = () => {
                     </label>
                     <input
                         type="text"
-                        defaultValue="Atikur Rahman"
+                        defaultValue="Arif Ahamed"
                         className="w-full p-4 border border-gray-200 rounded-xl focus:ring-1 focus:ring-[#00485E] outline-none text-gray-700 bg-white"
                     />
                 </div>
@@ -57,7 +57,7 @@ const TeacherProfile = () => {
                         <label className="font-bold text-[#002B44] text-base">Email</label>
                         <input
                             type="email"
-                            defaultValue="atikur@email.com"
+                            defaultValue="arif@email.com"
                             className="w-full p-4 border border-gray-200 rounded-xl outline-none text-gray-700"
                         />
                     </div>
