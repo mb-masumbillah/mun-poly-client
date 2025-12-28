@@ -1,5 +1,5 @@
 import { ChevronRight, Home, LogOut, Menu, X } from "lucide-react";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SuperAdminNavItem from "../ui/DashboardNavItem/SuperAdminNavItem";
 import InstituteAdminNavItem from "../ui/DashboardNavItem/InstituteAdminNavItem";
@@ -60,7 +60,9 @@ const Dashboard = () => {
                 </button>
 
                 <div className="border border-gray-300 py-4 flex justify-center">
-                    <img src="/logo.png" alt="Logo" />
+                    <Link to="/">
+                        <img src="/logo.png" alt="Logo" />
+                    </Link>
                 </div>
 
                 <div className="p-4 pt-8 pl-0 space-y-3 w-full flex-1 overflow-y-auto">

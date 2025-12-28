@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { LogOut, Menu, X } from 'lucide-react';
 import logo from '/logo.svg';
 import useAuth from '../../../hooks/useAuth';
@@ -27,7 +27,9 @@ const Navbar = () => {
       <nav className="flex justify-between items-center wrapper py-3">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="h-16 w-auto" />
+          <Link to="/">
+            <img src={logo} alt="Logo" className="h-16 w-auto" />
+          </Link>
         </div>
 
         {/* Desktop Menu */}

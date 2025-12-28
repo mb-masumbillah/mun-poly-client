@@ -59,8 +59,6 @@ export const DashboardRoutes = [
             },
 
 
-
-
             {
                 path: "institute-management",
                 element: <InstituteManagement />,
