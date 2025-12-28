@@ -18,6 +18,8 @@ const Login = () => {
         setError('')
 
         if (formData.email && formData.password) {
+
+
             login(formData?.role)
             navigate('/dashboard', { replace: true })
 

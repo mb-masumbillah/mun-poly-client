@@ -22,6 +22,11 @@ import AddDepartment from "../page/LibraryManagement/AddDepartment";
 import StudentManagement from "../page/LibraryManagement/StudentManagement";
 import { AddSemester } from "../page/LibraryManagement/AddSemester";
 import LibraryManagement from "../page/LibraryManagement/LibraryManagement";
+import SuperAdmin from "@/components/ui/Profile/SuperAdmin/SuperAdmin/SuperAdmin";
+import SuperAdminEditInfo from "@/components/ui/Profile/SuperAdmin/SuperAdmin/SuperAdminEditInfo";
+import ChangedPassword from "@/components/ui/Profile/SuperAdmin/SuperAdmin/ChangedPassword";
+import ForgotPassword from "@/components/ui/Profile/SuperAdmin/SuperAdmin/ForgotPassword";
+import SectionAdmin from "@/components/ui/Profile/SuperAdmin/SectionAdmin/SectionAdmin";
 
 export const DashboardRoutes = [
     {
@@ -32,6 +37,30 @@ export const DashboardRoutes = [
                 index: true,
                 element: <Profile></Profile>,
             },
+            {
+                path: "super-admin",
+                element: <SuperAdmin />,
+            },
+            {
+                path: "edit-profile",
+                element: <SuperAdminEditInfo />,
+            },
+            {
+                path: "changed-password",
+                element: <ChangedPassword />,
+            },
+            {
+                path: "forgot-password",
+                element: <ForgotPassword />,
+            },
+            {
+                path: "section-admin",
+                element: <SectionAdmin />,
+            },
+
+
+
+
             {
                 path: "institute-management",
                 element: <InstituteManagement />,

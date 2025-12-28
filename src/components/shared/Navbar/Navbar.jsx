@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   const navLinkClass = ({ isActive }) =>
-    `text-xl relative before:absolute before:content-[""] before:bg-primary before:h-0.75 before:left-0 before:duration-400 hover:scale-105 transition-all duration-400 before:-bottom-[4px] hover:before:w-full
+    `text-xl relative before:absolute before:content-[""] before:bg-[#003646] before:h-0.75 before:left-0 before:duration-400 hover:scale-105 transition-all duration-400 before:-bottom-[4px] hover:before:w-full
     ${isActive ? 'text-primary before:w-full' : 'text-gray-800 before:w-0'}`;
 
   const handleLogout = () => {
@@ -45,8 +45,8 @@ const Navbar = () => {
             <AvatarMenu handleLogout={handleLogout} />
           ) : (
             <div className="flex gap-3">
-              <NavLink to="/login" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black">Sign In</NavLink>
-              <NavLink to="/register" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black">Registration</NavLink>
+              <NavLink to="/login" className="bg-[#003646] text-white px-5 py-2 rounded-lg hover:bg-transparent border border-[#003646] duration-500 hover:text-black">Sign In</NavLink>
+              <NavLink to="/register" className="bg-[#003646] text-white px-5 py-2 rounded-lg hover:bg-transparent border border-[#003646] duration-500 hover:text-black">Registration</NavLink>
             </div>
           )}
 
@@ -81,8 +81,8 @@ const Navbar = () => {
         {user ? (
           <AvatarMenu handleLogout={handleLogout} />
         ) : <div className="flex flex-col gap-3 p-4">
-          <NavLink onClick={() => setIsOpen(false)} to="/login" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black text-center">Sign In</NavLink>
-          <NavLink onClick={() => setIsOpen(false)} to="/register" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black text-center">Registration</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} to="/login" className="bg-[#003646] text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black text-center">Sign In</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} to="/register" className="bg-[#003646] text-white px-5 py-2 rounded-lg hover:bg-transparent border border-primary duration-500 hover:text-black text-center">Registration</NavLink>
         </div>
         }
 

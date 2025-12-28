@@ -20,7 +20,7 @@ body {
 
 @theme {
   --color-primary: #00455D;
---shadow-hero: 8px 18px 40px rgba(0, 69, 93, 0.4);
+  --shadow-hero: 8px 18px 40px rgba(0, 69, 93, 0.4);
 }
 
 @theme inline {
@@ -141,6 +141,7 @@ body {
     @apply border-border outline-ring/50;
 
   }
+
   body {
     @apply bg-background text-foreground;
 

@@ -1,9 +1,16 @@
+import SectionAdminProfile from "./SuperAdmin/SectionAdminProfile";
+import SuperAProfile from "./SuperAdmin/SuperAProfile";
 
 
 const SuperAdminProfile = () => {
     return (
         <div>
-            super admin profile
+            <section>
+                <SuperAProfile></SuperAProfile>
+            </section>
+            <section>
+                <SectionAdminProfile></SectionAdminProfile>
+            </section>
         </div>
     );
 };
