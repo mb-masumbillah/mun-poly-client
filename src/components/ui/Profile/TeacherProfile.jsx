@@ -56,7 +56,7 @@ const TeacherProfile = () => {
                     <div className="flex flex-col gap-3">
                         <label className="font-bold text-[#002B44] text-base">Email</label>
                         <input
-                            type="email"
+                            type="email" 
                             defaultValue="arif@email.com"
                             className="w-full p-4 border border-gray-200 rounded-xl outline-none text-gray-700"
                         />
